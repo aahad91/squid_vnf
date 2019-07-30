@@ -1,0 +1,34 @@
+version: '3'
+services:
+  squid:
+    build:
+      context: /squid
+      dockerfile: dockerfile
+    ports:
+      - "3128:3128"
+    networks:
+      squid-test:      
+        ipv4_address: 172.20.0.2
+    tty: true         
+  
+  client:
+    build:
+      context: /squid_client
+      dockerfile: docker
+    environment:
+            HTTP_PROXY: http://172.20.0.2:3128
+    networks:
+      squid-test:
+        ipv4_address: 172.20.0.3
+    tty: true
+
+networks:
+  squid-test:
+    driver: bridge 
+    ipam:      
+      driver: default
+      config: 
+        - subnet: 172.20.0.0/16
+          # gateway: 172.20.0.1    
+
+
