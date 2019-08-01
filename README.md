@@ -12,7 +12,7 @@ cd squid_vnf
 docker-compose up --build -d
 ```
 
-Step 3: Check if containers "squidvnf_squid_1" & "squidvnf_client_1" is running
+Step 3: Check if containers "squidvnf_squid_id" & "squidvnf_client_id" is running
 ```bash
 docker ps -a
 ```
