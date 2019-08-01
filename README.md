@@ -8,6 +8,7 @@ git clone https://github.com/aahad91/squid_vnf.git
 
 Step 2: Execute the docker-compose.yaml file [note: ensure that docker-compose is installed on your system]
 ```bash
+cd squid_vnf
 docker-compose up --build -d
 ```
 
