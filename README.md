@@ -1,2 +1,32 @@
 # squid_vnf
 PG-Backflip candidate VNF (Proxy)
+## Installation
+Step 1: Clone the repo
+```bash
+git clone https://github.com/aahad91/squid_vnf.git
+```
+
+Step 2: Execute the docker-compose.yaml file [note: ensure that docker-compose is installed on your system]
+```bash
+docker-compose up --build -d
+```
+
+Step 3: Check if containers "squidvnf_squid_1" & "squidvnf_client_1" is running
+```bash
+docker ps -a
+```
+## Execution
+if possible open two terminal to get the real-time visualization of execution.
+
+Execute the following command to get the access logs of squid.
+```bash
+docker exec -it squidvnf_squid_1 tail -f /var/log/squid/access.log
+```
+Execute the following command to start the testing of the squid.
+```bash
+docker exec -it squidvnf_client_1 ./script.sh
+```
+After the requests are completed, testing results can be seen by executing the folloing commands.
+```bash
+docker exec -it squidvnf_client_1 cat test1.txt   # www.google.com
+docker exec -it squidvnf_client_1 cat test2.txt   # www.facebbok.com
