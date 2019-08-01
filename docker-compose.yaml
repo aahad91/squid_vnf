@@ -2,7 +2,7 @@ version: '3'
 services:
   squid:
     build:
-      context: /squid
+      context: ./squid
       dockerfile: dockerfile
     ports:
       - "3128:3128"
@@ -13,7 +13,7 @@ services:
   
   client:
     build:
-      context: /squid_client
+      context: ./squid_client
       dockerfile: docker
     environment:
             HTTP_PROXY: http://172.20.0.2:3128
@@ -29,6 +29,5 @@ networks:
       driver: default
       config: 
         - subnet: 172.20.0.0/16
-          # gateway: 172.20.0.1    
 
 

@@ -4,8 +4,7 @@ RUN apt-get update
 RUN apt-get install -y curl 
 RUN apt-get install -y apache2-utils
 RUN touch test1.txt test2.txt
-COPY script.sh /usr/local/bin/script.sh
-RUN chmod +x /usr/local/bin/script.sh
-#ENTRYPOINT ./script.sh && bash
-CMD ["/usr/local/bin/script.sh"]
-CMD bash
+COPY script.sh /script.sh
+RUN chmod +x /script.sh
+ENTRYPOINT  bash
+
