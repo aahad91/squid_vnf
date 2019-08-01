@@ -21,13 +21,13 @@ if possible open two terminal to get the real-time visualization of execution.
 
 Execute the following command to get the access logs of squid.
 ```bash
-docker exec -it squidvnf_squid_1 tail -f /var/log/squid/access.log
+docker exec -it squidvnf_squid_1_id tail -f /var/log/squid/access.log  #id can checked from docker ps -a container name
 ```
 Execute the following command to start the testing of the squid.
 ```bash
-docker exec -it squidvnf_client_1 ./script.sh
+docker exec -it squidvnf_client_1_id ./script.sh
 ```
 After the requests are completed, testing results can be seen by executing the folloing commands.
 ```bash
-docker exec -it squidvnf_client_1 cat test1.txt   # www.google.com
-docker exec -it squidvnf_client_1 cat test2.txt   # www.facebbok.com
+docker exec -it squidvnf_client_1_id cat test1.txt   # www.google.com
+docker exec -it squidvnf_client_1_id cat test2.txt   # www.facebbok.com
