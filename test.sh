@@ -26,8 +26,8 @@ virt-customize -v -a xenial-server-cloudimg-amd64-disk1.img \
 mkdir apache-bench
 cd apache-bench 
 wget http://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img
-
-virt-customize -a apache-bench/xenial-server-cloudimg-amd64-disk1.img \
+cd /
+virt-customize -a /apache-bench/xenial-server-cloudimg-amd64-disk1.img \
       --run-command 'apt-get update' \
       --run-command 'DEBIAN_FRONTEND=noninteractive' \
       --run-command 'apt-get install -y \
