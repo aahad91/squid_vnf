@@ -24,6 +24,7 @@ virt-customize -v -a xenial-server-cloudimg-amd64-disk1.img \
 
 # custom ubuntu-cloud-image for apache-bench
 mkdir apache-bench
+cd apache-bench 
 wget http://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img
 
 virt-customize -a apache-bench/xenial-server-cloudimg-amd64-disk1.img \
