@@ -12,7 +12,7 @@ virt-customize -a xenial-server-cloudimg-amd64-disk1.img \
                       python \
                       python-yaml \
                       python3 \
-                      python3-pip'
+                      python3-pip' \
       --run-command 'cd /' \
       --upload /image-descriptors/squid/squid.conf:/etc/squid/squid.conf \
       --upload /image-descriptors/squid/start.sh:/start.sh \
