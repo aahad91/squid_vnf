@@ -19,7 +19,7 @@ vnfd:vnfd-catalog:
       count: 1
       description: contains configuration for VMs(VNF) running on OpenStack
       id: vnfd-squid-vm
-      image: ubuntu1604xenial
+      image: squid-vm
       name: vnfd-squid-vm
       interface:
       - external-connection-point-ref: eth0-data
@@ -35,7 +35,7 @@ vnfd:vnfd-catalog:
         virtual-interface:
           type: PARAVIRT
       vm-flavor:
-        memory: 512
+        memory-mb: 512
         storage-gb: 4
         vcpu-count: 1
     vnf-configuration:

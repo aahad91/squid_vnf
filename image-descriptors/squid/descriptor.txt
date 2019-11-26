@@ -28,9 +28,12 @@ sudo virt-customize -a xenial-server-cloudimg-amd64-disk1.img \
                       python3 \
                       python3-pip' \
       --run-command 'cd /' \
-      --upload squid.conf:/etc/squid/squid.conf
+      --upload squid.conf:/etc/squid/squid.conf \
       --upload start.sh:/start.sh \
       --upload stop.sh:/stop.sh \
       --run-command 'chmod +x start.sh' \
       --run-command 'chmod +x stop.sh' \
       --mkdir /tngbench_share
+
+# OpenStack command to add squid image
+openstack image create --public --disk-format qcow2 --container-format bare --file xenial-server-cloudimg-amd64-disk1.img squid-vm 

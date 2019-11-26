@@ -1,6 +1,6 @@
 #cloud-config
 password: osm4u
-chpasswd: { expire: False}
+chpasswd: { expire: False }
 ssh_pwauth: True
 datasource:
     OpenStack:
@@ -12,9 +12,9 @@ datasource:
 write_files:
 -   content: |
         #!/bin/bash
-        hname=§(hostname)
+        hname=$(hostname)
         cat /etc/hosts | grep $hname >> /dev/null
-        if [ $? -ne 0];then
+        if [ $? -ne 0 ];then
         sudo bash -c "echo '127.0.0.1 $hname' >> /etc/hosts"
         fi
         netfile=$(find /etc/network/interfaces.d -name "*.cfg")
