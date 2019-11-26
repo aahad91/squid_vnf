@@ -1,5 +1,7 @@
-# squid_vnf
+[![Build Status](https://travis-ci.com/aahad91/squid_vnf.svg?branch=OSM-OpenStack-Benchmarking)](https://travis-ci.com/aahad91/squid_vnf)
+# squid_vnf 
 PG-Backflip candidate VNF (Proxy)
+Testing on OSM/OpenStack Using Tng-Bench
 ## Installation
 Step 1: Clone the repo
 ```bash
