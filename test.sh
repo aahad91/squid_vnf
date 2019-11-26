@@ -15,8 +15,8 @@ virt-customize -v -a xenial-server-cloudimg-amd64-disk1.img \
                       python3-pip' \
       --run-command 'cd /' \
       --upload image-descriptors/squid/squid.conf:/etc/squid/squid.conf \
-      --upload /image-descriptors/squid/start.sh:/start.sh \
-      --upload /image-descriptors/squid/stop.sh:/stop.sh \
+      --upload image-descriptors/squid/start.sh:/start.sh \
+      --upload image-descriptors/squid/stop.sh:/stop.sh \
       --run-command 'chmod +x start.sh' \
       --run-command 'chmod +x stop.sh' \
       --mkdir /tngbench_share
