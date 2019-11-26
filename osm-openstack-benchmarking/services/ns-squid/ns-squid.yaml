@@ -1,0 +1,31 @@
+nsd:nsd-catalog:
+  nsd:
+  - constituent-vnfd:
+    - member-vnf-index: 1
+      vnfd-id-ref: vnfd-squid
+    description: "Example NSD of SQUID VNF with 1 input Probe accessing internet"
+    id: ns-squid-nsd
+#   logo:
+    name: squid-nsd
+    short-name: sq-nsd
+    vendor: de.upb.cn
+    version: '1.0'
+    vld:
+    - id: ns-squid-nsd-vld1-mgmt
+      mgmt-network: 'true'
+      name: ns-squid-nsd-vld1-mgmt
+      short-name: ns-squid-nsd-vld1-mgmt
+      type: ELAN
+      vim-network-name: mgmt
+      vnfd-connection-point-ref:
+      - member-vnf-index-ref: 1
+        vnfd-connection-point-ref: eth1-mgmt
+        vnfd-id-ref: vnfd-squid
+    - id: ns-squid-nsd-vld1-data
+      name: ns-squid-nsd-vld1-data
+      short-name: ns-squid-nsd-vld1-data
+      type: ELAN
+      vnfd-connection-point-ref:
+      - member-vnf-index-ref: 1
+        vnfd-connection-point-ref: eth0-data
+        vnfd-id-ref: vnfd-squid
