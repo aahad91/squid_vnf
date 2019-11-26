@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/aahad91/squid_vnf.svg?branch=OSM-OpenStack-Benchmarking)](https://travis-ci.com/aahad91/squid_vnf)
+[![Build Status](https://travis-ci.com/aahad91/squid_vnf.svg?branch=OSM-OpenStack-Benchmarking)](https://travis-ci.com/aahad91/squid_vnf) -> custom cloud image squid & apache-bench
 # squid_vnf 
 PG-Backflip candidate VNF (Proxy)
 Testing on OSM/OpenStack Using Tng-Bench
