@@ -1,0 +1,39 @@
+---
+# PED file for testing SQUID VNF with one input probe accessing Internet
+descriptor_version: 0.3 # 5GTANGO: 0.2, SONATA 0.1, PG-BACKFLIP 0.3
+vendor: "de.upb.cn"
+name: "ped-squid"
+version: "0.1"
+author: "Abdul Ahad"
+description: "Profiling SQUID VNF with one input probe accessing Internet"
+#Path for NSD & VNFD packages
+service_package: "../services/ns-squid.tar.gz"
+function_package: "../services/vnfd-squid.tar.gz"
+
+#Profiling Defination
+service_experiments:
+  - name: "ped-squid"
+    description: "result of ped-squid"
+    repetitions: 1
+    time_limit: 30
+    time_warmup: 5
+    target:
+      vendor: "de.upb.cn"
+      name: "ns-squid-nsd"
+      version: "1.0"
+# Input/Output Probe Defination
+    measurement_points:
+      - name: "mp.input"
+        connection_point: "ns:input"
+        vm_image: "apache-bench-ubuntu"
+    experiment_parameters:
+      - function: "vnfd-squid-vm"
+        cmd_start: "./start.sh"
+        cmd_stop: "./stop.sh"
+        cpu_cores: [0,1]
+        mem_max: 2048
+      - function: "mp.input"
+        cmd_start: ""
+        cmd_stop: "./stop.sh"
+        cpu_cores: [2,3]
+        mem_max: 2048
