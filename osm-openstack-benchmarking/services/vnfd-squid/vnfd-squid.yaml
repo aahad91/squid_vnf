@@ -1,0 +1,51 @@
+vnfd:vnfd-catalog:
+  vnfd:
+  - connection-point:
+    - name: eth0-data
+      type: VPORT
+    - name: eth1-mgmt
+      type: VPORT
+    description: Benchmarking SQUID VNF using Tng-Bench, OSM, OpenStack
+    id: vnfd-squid
+ #  logo:
+    mgmt-interface:
+      cp: eth1-mgmt
+    name: squid-vnf
+    vendor: de.upb.cn
+    version: '1.0'
+    short-name: sq-vnf
+    vdu:
+    - cloud-init-file: cloud-config.txt
+      count: 1
+      description: contains configuration for VMs(VNF) running on OpenStack
+      id: vnfd-squid-vm
+      image: ubuntu1604xenial
+      name: vnfd-squid-vm
+      interface:
+      - external-connection-point-ref: eth0-data
+        name: eth0-data
+        position: 2
+        type: EXTERNAL
+        virtual-interface:
+          type: PARAVIRT
+      - external-connection-point-ref:
+        name: eth1-mgmt
+        position: 1
+        type: EXTERNAL
+        virtual-interface:
+          type: PARAVIRT
+      vm-flavor:
+        memory: 512
+        storage-gb: 4
+        vcpu-count: 1
+    vnf-configuration:
+      initial-config-primitive:
+      - name: config
+        parameter:
+        - name: ssh-hostname
+          value: <rw_mgmt_ip>
+        - name: ssh-username
+          value: ubuntu
+        - name: ssh-password
+          value: osm4u
+        seq: '1'
