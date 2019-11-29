@@ -28,7 +28,7 @@ vnfd:vnfd-catalog:
         type: EXTERNAL
         virtual-interface:
           type: PARAVIRT
-      - external-connection-point-ref:
+      - external-connection-point-ref: eth1-mgmt
         name: eth1-mgmt
         position: 1
         type: EXTERNAL
