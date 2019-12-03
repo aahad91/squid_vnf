@@ -7,9 +7,13 @@ addons:
 env:
   - LIBGUESTFS_BACKEND=direct
 before_script:
-  - wget http://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img
-  - sudo chmod +x test.sh
+  - sudo chmod +x /image-descriptors/squid/descriptor.sh
+  - sudo chmod +x /image-descriptors/apache-bench/descriptor.sh
+#  - wget http://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img
+#  - sudo chmod +x test.sh
 script:
-  - sudo ./test.sh
+  - sudo ./image-descriptors/squid/descriptor.sh
+  - sudo ./image-descriptors/apache-bench/descriptor.sh
+#  - sudo ./test.sh
 after_script:
   - echo "Build success"
