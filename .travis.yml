@@ -13,7 +13,7 @@ before_script:
 #  - sudo chmod +x test.sh
 script:
   - cd image-descriptors/squid/
-  - sudo .descriptor.sh
+  - sudo ./descriptor.sh
   - cd ..
   - cd apache-bench/
   - sudo ./descriptor.sh
