@@ -7,8 +7,8 @@ addons:
 env:
   - LIBGUESTFS_BACKEND=direct
 before_script:
-  - sudo chmod +x /image-descriptors/squid/descriptor.sh
-  - sudo chmod +x /image-descriptors/apache-bench/descriptor.sh
+  - sudo chmod +x image-descriptors/squid/descriptor.sh
+  - sudo chmod +x image-descriptors/apache-bench/descriptor.sh
 #  - wget http://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img
 #  - sudo chmod +x test.sh
 script:
