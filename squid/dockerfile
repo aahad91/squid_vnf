@@ -1,13 +1,29 @@
 FROM ubuntu:latest
+MAINTAINER aahad91
 
 RUN apt-get -y update
-
 RUN DEBIAN_FRONTEND=noninteractive \
-apt-get install -y squid
+apt-get install -y \
+net-tools \
+iproute2 \
+inetutils-ping \
+iptables \
+squid3 \
+curl \
+python \
+python-yaml \
+python3 \
+python3-pip
 
-COPY squid.conf /etc/squid/squid.conf
+ADD squid.conf /etc/squid/squid.conf
+ADD log_intf_statistics.py log_intf_statistics.py
+WORKDIR /
 
+ADD start.sh start.sh
+RUN chmod +x start.sh
+ADD stop.sh stop.sh
+RUN chmod +x stop.sh
+
+RUN mkdir /tngbench_share
 EXPOSE 3128
-ENTRYPOINT service squid restart && bash 
- 
-
+CMD /bin/bash

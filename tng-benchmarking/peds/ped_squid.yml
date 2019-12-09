@@ -1,0 +1,58 @@
+---
+descriptor_version: 0.2
+vendor: "de.upb.cn"
+name: "ped_squid"
+version: "1.0"
+author: "Abdul Ahad"
+description: "pg-backflip"
+
+service_package: "../services/ns_squid"
+
+service_experiments:
+  - name: "ped_squid"
+    description: "pg-backflip"
+    repetitions: 100
+    time_limit: 60
+
+    target:
+      vendor: "de.upb.cn"
+      name: "ns_squid"
+      version: "0.1"
+
+    measurement_points:
+      - name: "mp.output"
+        connection_point: "ns:output"
+        container: "aahad91/apache_server"
+        address: "40.0.0.254/24"
+      - name: "mp.input"
+        connection_point: "ns:input"
+        container: "aahad91/vnf_client"
+        address: "20.10.0.3/24"
+    experiment_parameters:
+      - function: "de.upb.cn.vnf_squid.0.1"
+        cmd_start: "./start.sh"
+        cmd_stop: "./stop.sh"
+        cpu_bw: {"min": 0.1, "max": 0.5, "step": 0.1}
+        cpu_cores: ["2"]
+        mem_max: [256, 512, 1024, 2048]
+        mem_swap_max: null
+        io_bw: null
+      - function: "mp.input"
+        cmd_start: [
+          #"ab -c 1 -t 60 -n 9999999 -e /tngbench_share/ab_logs1.csv -s 60 -k -i -X 20.10.0.2:3128 http://40.0.0.254:80/",
+          "ab -c 9999 -r -t 60 -n 99999999 -e /tngbench_share/ab_logs2.csv -s 60 -k -X 20.10.0.2:3128 http://40.0.0.254:80/"
+        ]
+        cmd_stop: "./stop.sh"
+        cpu_bw: null
+        cpu_cores: "4"
+        mem_max: null
+        mem_swap_max: null
+        io_bw: null
+      - function: "mp.output"
+        cmd_start: "./start.sh"
+        cmd_stop: "./stop.sh"
+        cpu_bw: null
+        cpu_cores: "2"
+        mem_max: null
+        mem_swap_max: null
+        io_bw: null
