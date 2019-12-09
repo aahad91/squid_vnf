@@ -14,10 +14,13 @@ virt-customize -v -a xenial-server-cloudimg-amd64-disk1.img \
                       python-yaml \
                       python3 \
                       python3-pip' \
-      --run-command 'cd /' \
-      --upload image-descriptors/squid/squid.conf:/etc/squid/squid.conf \
-      --upload image-descriptors/squid/start.sh:/start.sh \
-      --upload image-descriptors/squid/stop.sh:/stop.sh \
+      --run-command 'useradd -s /bin/bash -d /home/ubuntu -m ubuntu' \
+      --run-command 'cd /home/ubuntu/' \
+      --upload squid.conf:/etc/squid/squid.conf \
+      --upload start.sh:/start.sh \
+      --upload stop.sh:/stop.sh \
+      --run-command 'chown ubuntu start.sh' \
+      --run-command 'chown ubuntu stop.sh' \
       --run-command 'chmod +x start.sh' \
       --run-command 'chmod +x stop.sh' \
       --mkdir /tngbench_share
@@ -48,9 +51,12 @@ virt-customize -a xenial-server-cloudimg-amd64-disk1.img.1 \
                       python-yaml \
                       python3 \
                       python3-pip' \
-      --run-command 'cd /' \
-      --upload image-descriptors/apache-bench/start.sh:/start.sh \
-      --upload image-descriptors/apache-bench/stop.sh:/stop.sh \
+      --run-command 'useradd -s /bin/bash -d /home/ubuntu -m ubuntu'\
+      --run-command 'cd /home/ubuntu' \
+      --upload start.sh:/start.sh \
+      --upload stop.sh:/stop.sh \
+      --run-command 'chown ubuntu start.sh' \
+      --run-command 'chown ubuntu stop.sh' \
       --run-command 'chmod +x start.sh' \
       --run-command 'chmod +x stop.sh' \
       --mkdir /tngbench_share
