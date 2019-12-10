@@ -30,8 +30,7 @@ virt-customize -a xenial-server-cloudimg-amd64-disk1.img \
                       python-yaml \
                       python3 \
                       python3-pip' \
-      --run-command 'useradd -s /bin/bash -d /home/ubuntu -m ubuntu' \
-      --run-command 'cd /home/ubuntu/' \
+      --run-command 'cd /' \
       --upload squid.conf:/etc/squid/squid.conf \
       --upload start.sh:/start.sh \
       --upload stop.sh:/stop.sh \

@@ -1,2 +1,2 @@
 #!/bin/bash
-ate > /tngbench_share/stop.txt
+date > /tngbench_share/stop.txt
