@@ -43,6 +43,8 @@ virt-customize -a xenial-server-cloudimg-amd64-disk1.img \
       --run-command 'cd /' \
       --upload start.sh:/start.sh \
       --upload stop.sh:/stop.sh \
+      --upload log_intf_statistics.py:/log_intf_statistics.py \
+      --upload process_ab_results.py:/process_ab_results.py \
       --run-command 'chmod +x start.sh' \
       --run-command 'chmod +x stop.sh' \
       --mkdir /tngbench_share

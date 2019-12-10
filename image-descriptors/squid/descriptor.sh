@@ -34,6 +34,7 @@ virt-customize -a xenial-server-cloudimg-amd64-disk1.img \
       --upload squid.conf:/etc/squid/squid.conf \
       --upload start.sh:/start.sh \
       --upload stop.sh:/stop.sh \
+      --upload log_intf_statistics.py:/log_intf_statistics.py \
       --run-command 'chmod +x start.sh' \
       --run-command 'chmod +x stop.sh' \
       --mkdir /tngbench_share
