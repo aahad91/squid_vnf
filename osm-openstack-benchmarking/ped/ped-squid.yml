@@ -15,7 +15,7 @@ service_experiments:
   - name: "ped-squid"
     description: "result of ped-squid"
     repetitions: 1
-    time_limit: 60
+    time_limit: 90
     time_warmup: 5
     target:
       vendor: "de.upb.cn"
@@ -35,5 +35,5 @@ service_experiments:
       - function: "mp.input"
         cmd_start: "./start.sh"
         cmd_stop: "./stop.sh"
-        cpu_cores: 1
+        cpu_cores: 2
         mem_max: 2048
