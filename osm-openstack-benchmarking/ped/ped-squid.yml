@@ -14,9 +14,9 @@ function_package: "../services/vnfd-squid.tar.gz"
 service_experiments:
   - name: "ped-squid"
     description: "result of ped-squid"
-    repetitions: 1
+    repetitions: 10
     time_limit: 90
-    time_warmup: 5
+    time_warmup: 30
     target:
       vendor: "de.upb.cn"
       name: "ns-squid-nsd"
