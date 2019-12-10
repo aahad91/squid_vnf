@@ -30,10 +30,10 @@ service_experiments:
       - function: "vnfd-squid-vm"
         cmd_start: "./start.sh"
         cmd_stop: "./stop.sh"
-        cpu_cores: [0,1]
+        cpu_cores: 1
         mem_max: 2048
       - function: "mp.input"
         cmd_start: "./start.sh"
         cmd_stop: "./stop.sh"
-        cpu_cores: [2,3]
+        cpu_cores: 1
         mem_max: 2048
