@@ -26,6 +26,9 @@ service_experiments:
       - name: "mp.input"
         connection_point: "ns:input"
         vm_image: "apache-bench-ubuntu"
+      - name: "mp.output"
+        connection_point: "ns:output"
+        vm_image: "apache-webserver"
     experiment_parameters:
       - function: "vnfd-squid-vm"
         cmd_start: "./start.sh"
@@ -37,3 +40,8 @@ service_experiments:
         cmd_stop: "./stop.sh"
         cpu_cores: 2
         mem_max: 2048
+      - function: "mp.output"
+        cmd_start: "./start.sh"
+        cmd_stop: "./stop.sh"
+        cpu_cores: 2
+        mem_max: 1024
