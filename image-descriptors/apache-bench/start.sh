@@ -14,4 +14,5 @@ do
  fi
 done
 echo "Apache Bench started ..."
-ab -c 999 -r -t 60 -n 9999999 -e /tngbench_share/ab_logs2.csv -s 60 -k -X $VNF:3128 http://www.baidu.com/
+#ab -c 999 -r -t 60 -n 9999999 -e /tngbench_share/ab_logs2.csv -s 60 -k -X $VNF:3128 http://www.baidu.com/
+ab -c 999 -r -t 60 -n 9999999 -e /tngbench_share/ab_logs1.csv -s 60 -k -X $VNF:3128 http://$OUTPUT/

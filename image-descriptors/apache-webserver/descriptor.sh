@@ -38,6 +38,7 @@ virt-customize -a xenial-server-cloudimg-amd64-disk1.img \
       --upload log_intf_statistics.py:/log_intf_statistics.py \
       --run-command 'chmod +x start.sh' \
       --run-command 'chmod +x stop.sh' \
+      --run-command 'echo "manage_etc_hosts: true" >> /etc/cloud/cloud.cfg' \
       --mkdir /tngbench_share
 
 #OpenStack command

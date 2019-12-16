@@ -47,6 +47,7 @@ virt-customize -a xenial-server-cloudimg-amd64-disk1.img \
       --upload process_ab_results.py:/process_ab_results.py \
       --run-command 'chmod +x start.sh' \
       --run-command 'chmod +x stop.sh' \
+      --run-command 'echo "manage_etc_hosts: true" >> /etc/cloud/cloud.cfg' \
       --mkdir /tngbench_share
 
 #OpenStack command
