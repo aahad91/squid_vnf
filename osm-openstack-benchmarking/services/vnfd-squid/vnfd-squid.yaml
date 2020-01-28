@@ -1,7 +1,9 @@
 vnfd:vnfd-catalog:
   vnfd:
   - connection-point:
-    - name: eth0-data
+    - name: eth0-data1
+      type: VPORT
+    - name: eth0-data2
       type: VPORT
     - name: eth1-mgmt
       type: VPORT
@@ -22,9 +24,15 @@ vnfd:vnfd-catalog:
       image: squid-vm
       name: vnfd-squid-vm
       interface:
-      - external-connection-point-ref: eth0-data
-        name: eth0-data
+      - external-connection-point-ref: eth0-data1
+        name: eth0-data1
         position: 2
+        type: EXTERNAL
+        virtual-interface:
+          type: PARAVIRT
+      - external-connection-point-ref: eth0-data2
+        name: eth0-data2
+        position: 3
         type: EXTERNAL
         virtual-interface:
           type: PARAVIRT

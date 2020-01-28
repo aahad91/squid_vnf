@@ -21,12 +21,21 @@ nsd:nsd-catalog:
       - member-vnf-index-ref: 1
         vnfd-connection-point-ref: eth1-mgmt
         vnfd-id-ref: vnfd-squid
-    - id: ns-squid-nsd-vld1-data
-      name: ns-squid-nsd-vld1-data
+    - id: ns-squid-nsd-vld1-data1
+      name: ns-squid-nsd-vld1-data1
       short-name: ns-squid-nsd-vld1-data
       type: ELAN
-      vim-network-name: data
+      vim-network-name: data1
       vnfd-connection-point-ref:
       - member-vnf-index-ref: 1
-        vnfd-connection-point-ref: eth0-data
+        vnfd-connection-point-ref: eth0-data1
+        vnfd-id-ref: vnfd-squid
+    - id: ns-squid-nsd-vld1-data2
+      name: ns-squid-nsd-vld1-data2
+      short-name: ns-squid-nsd-vld1-data2
+      type: ELAN
+      vim-network-name: data2
+      vnfd-connection-point-ref:
+      - member-vnf-index-ref: 1
+        vnfd-connection-point-ref: eth0-data2
         vnfd-id-ref: vnfd-squid
