@@ -23,7 +23,7 @@ nsd:nsd-catalog:
         vnfd-id-ref: vnfd-squid
     - id: ns-squid-nsd-vld1-data1
       name: ns-squid-nsd-vld1-data1
-      short-name: ns-squid-nsd-vld1-data
+      short-name: ns-squid-nsd-vld1-data1
       type: ELAN
       vim-network-name: data1
       vnfd-connection-point-ref:
