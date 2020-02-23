@@ -36,7 +36,7 @@ service_experiments:
         cpu_cores: 1
         mem_max: 2048
       - function: "mp.input"
-        cmd_start: "./start.sh"
+        cmd_start: "sleep 30;./start.sh"
         cmd_stop: "./stop.sh"
         cpu_cores: 2
         mem_max: 2048

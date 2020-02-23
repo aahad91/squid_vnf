@@ -42,5 +42,5 @@ virt-customize -a xenial-server-cloudimg-amd64-disk1.img \
       --mkdir /tngbench_share
 
 #OpenStack command
-source /opt/stack/devstack/accrc/admin/admin
-openstack image create --public --disk-format qcow2 --container-format bare --file xenial-server-cloudimg-amd64-disk1.img apache-webserver
+#source /opt/stack/devstack/accrc/admin/admin
+#openstack image create --public --disk-format qcow2 --container-format bare --file xenial-server-cloudimg-amd64-disk1.img apache-webserver
