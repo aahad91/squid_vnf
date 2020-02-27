@@ -1,3 +1,4 @@
+[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/aahad91/squid_vnf/?ref=repository-badge)
 # squid_vnf
 PG-Backflip candidate VNF (Proxy)
 ## Installation
