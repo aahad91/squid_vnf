@@ -14,8 +14,8 @@ function_package: "../services/vnfd-squid.tar.gz"
 service_experiments:
   - name: "ped-squid"
     description: "result of ped-squid"
-    repetitions: 10
-    time_limit: 90
+    repetitions: 1
+    time_limit: 120
     time_warmup: 30
     target:
       vendor: "de.upb.cn"
@@ -33,15 +33,15 @@ service_experiments:
       - function: "vnfd-squid-vm"
         cmd_start: "./start.sh"
         cmd_stop: "./stop.sh"
-        cpu_cores: 1
-        mem_max: 2048
+        cpu_cores: [1, 2, 4]
+        mem_max: [1024, 2048, 4096]
       - function: "mp.input"
         cmd_start: "sleep 30;./start.sh"
         cmd_stop: "./stop.sh"
-        cpu_cores: 2
-        mem_max: 2048
+        cpu_cores: [1, 2, 4]
+        mem_max: [1024, 2048, 4096]
       - function: "mp.output"
         cmd_start: "./start.sh"
         cmd_stop: "./stop.sh"
-        cpu_cores: 2
-        mem_max: 1024
+        cpu_cores: [1, 2]
+        mem_max: [1024, 2048]
