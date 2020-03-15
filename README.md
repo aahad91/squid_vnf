@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/aahad91/squid_vnf.svg?branch=master)](https://travis-ci.com/aahad91/squid_vnf)
+[![Build Status](https://travis-ci.com/aahad91/squid_vnf.svg?branch=tng-benchmarking)](https://travis-ci.com/aahad91/squid_vnf)
 # squid_vnf
 PG-Backflip candidate VNF (Proxy)
 ## Installation
